@@ -1,0 +1,8 @@
+{
+  "host": "xxx",
+  "database": "xx",
+  "dialect": "mysql",
+  "username": "xx",
+  "password": "xx",
+  "timezone": "+09:00"
+}
