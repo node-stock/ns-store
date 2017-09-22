@@ -54,14 +54,14 @@ export default class SymbolInfo extends Model<SymbolInfo> {
 
   @ForeignKey(() => Sector)
   @Column({
-    type: DataType.CHAR(3),
+    type: DataType.STRING(50),
     comment: '板块'
   })
   sector: string;
 
   @ForeignKey(() => Industry)
   @Column({
-    type: DataType.CHAR(3),
+    type: DataType.STRING(20),
     comment: '行业'
   })
   industry: string;

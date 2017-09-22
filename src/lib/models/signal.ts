@@ -23,6 +23,12 @@ export default class Transaction extends Model<Transaction> {
   timeframe: string;
 
   @Column({
+    type: DataType.CHAR(2),
+    comment: '方向'
+  })
+  side: string;
+
+  @Column({
     type: DataType.FLOAT(10),
     comment: '价格'
   })

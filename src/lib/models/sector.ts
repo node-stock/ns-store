@@ -11,7 +11,7 @@ export default class Sector extends Model<Sector> {
 
   @Column({
     primaryKey: true,
-    type: DataType.CHAR(3),
+    type: DataType.STRING(50),
     comment: '代码'
   })
   code: string;

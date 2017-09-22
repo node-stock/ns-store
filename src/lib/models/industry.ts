@@ -11,7 +11,7 @@ export default class Industry extends Model<Industry> {
 
   @Column({
     primaryKey: true,
-    type: DataType.CHAR(3),
+    type: DataType.STRING(20),
     comment: '代码'
   })
   code: string;

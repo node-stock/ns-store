@@ -1,0 +1,172 @@
+[
+  {
+    "exchange": "TYO",
+    "code": "construction",
+    "name": "建設"
+  },
+  {
+    "exchange": "TYO",
+    "code": "service",
+    "name": "サービス"
+  },
+  {
+    "exchange": "TYO",
+    "code": "information-and-communication",
+    "name": "情報通信"
+  },
+  {
+    "exchange": "TYO",
+    "code": "other-finance-and-insirance",
+    "name": "その他金融"
+  },
+  {
+    "exchange": "TYO",
+    "code": "wholesale",
+    "name": "卸売"
+  },
+  {
+    "exchange": "TYO",
+    "code": "chemical",
+    "name": "化学"
+  },
+  {
+    "exchange": "TYO",
+    "code": "medical",
+    "name": "医薬品"
+  },
+  {
+    "exchange": "TYO",
+    "code": "precision-machinery",
+    "name": "精密機器"
+  },
+  {
+    "exchange": "TYO",
+    "code": "other-goods",
+    "name": "その他製品"
+  },
+  {
+    "exchange": "TYO",
+    "code": "real-estate",
+    "name": "不動産"
+  },
+  {
+    "exchange": "TYO",
+    "code": "agriculture-and-fisheries",
+    "name": "水産・農林"
+  },
+  {
+    "exchange": "TYO",
+    "code": "food",
+    "name": "食料品"
+  },
+  {
+    "exchange": "TYO",
+    "code": "retail",
+    "name": "小売"
+  },
+  {
+    "exchange": "TYO",
+    "code": "metal-product",
+    "name": "金属製品"
+  },
+  {
+    "exchange": "TYO",
+    "code": "fabric",
+    "name": "繊維製品"
+  },
+  {
+    "exchange": "TYO",
+    "code": "pulp-and-paper",
+    "name": "パルプ・紙"
+  },
+  {
+    "exchange": "TYO",
+    "code": "rubber-products",
+    "name": "ゴム製品"
+  },
+  {
+    "exchange": "TYO",
+    "code": "glass-earth-and-soil-product",
+    "name": "ガラス土石"
+  },
+  {
+    "exchange": "TYO",
+    "code": "iron-and-steel",
+    "name": "鉄鋼"
+  },
+  {
+    "exchange": "TYO",
+    "code": "nonferrous-metal",
+    "name": "非鉄金属"
+  },
+  {
+    "exchange": "TYO",
+    "code": "machinery",
+    "name": "機械"
+  },
+  {
+    "exchange": "TYO",
+    "code": "electronic-goods",
+    "name": "電気機器"
+  },
+  {
+    "exchange": "TYO",
+    "code": "stock-commodity-and-future-trading",
+    "name": "証券・先物"
+  },
+  {
+    "exchange": "TYO",
+    "code": "insurance",
+    "name": "保険"
+  },
+  {
+    "exchange": "TYO",
+    "code": "transportation-machinery",
+    "name": "輸送用機器"
+  },
+  {
+    "exchange": "TYO",
+    "code": "land-transportation",
+    "name": "陸運"
+  },
+  {
+    "exchange": "TYO",
+    "code": "sea-transportation",
+    "name": "海運"
+  },
+  {
+    "exchange": "TYO",
+    "code": "air-transporataion",
+    "name": "空運鉱業"
+  },
+  {
+    "exchange": "TYO",
+    "code": "storage-and-transportataion-related",
+    "name": "倉庫・運輸"
+  },
+  {
+    "exchange": "TYO",
+    "code": "index",
+    "name": "株価指数"
+  },
+  {
+    "exchange": "TYO",
+    "code": "bank",
+    "name": "銀行"
+  },
+  {
+    "exchange": "TYO",
+    "code": "energy",
+    "name": "電気・ガス"
+  },
+  {
+    "exchange": "TYO",
+    "code": "mining",
+    "name": "鉱業"
+  },
+  {
+    "exchange": "TYO",
+    "code": "mineral-oil-and-coal-product",
+    "name": "石油・石炭"
+  }
+]
