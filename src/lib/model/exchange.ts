@@ -36,4 +36,19 @@ export default class Exchange extends Model<Exchange> {
 
   @HasMany(() => Market)
   markets: Market[];
+
+  @Column
+  get created_at(): string {
+    return this.getDataValue('created_at');
+  }
+
+  @Column
+  get updated_at(): string {
+    return this.getDataValue('updated_at');
+  }
+
+  @Column
+  get deleted_at(): string {
+    return this.getDataValue('deleted_at');
+  }
 }

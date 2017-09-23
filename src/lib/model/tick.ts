@@ -90,4 +90,19 @@ export default class Tick extends Model<Tick> {
   })
   // TODO
   ask_vol: number[];
+
+  @Column
+  get created_at(): string {
+    return this.getDataValue('created_at');
+  }
+
+  @Column
+  get updated_at(): string {
+    return this.getDataValue('updated_at');
+  }
+
+  @Column
+  get deleted_at(): string {
+    return this.getDataValue('deleted_at');
+  }
 }

@@ -46,4 +46,19 @@ export default class Order extends Model<Order> {
     comment: '状态'
   })
   state: number;
+
+  @Column
+  get created_at(): string {
+    return this.getDataValue('created_at');
+  }
+
+  @Column
+  get updated_at(): string {
+    return this.getDataValue('updated_at');
+  }
+
+  @Column
+  get deleted_at(): string {
+    return this.getDataValue('deleted_at');
+  }
 }
