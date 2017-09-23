@@ -1,5 +1,5 @@
 import { Table, Column, Model, DataType, ForeignKey } from 'sequelize-typescript';
-import Exchange from './exchange';
+import { Exchange } from '../model';
 
 @Table({
   timestamps: true,

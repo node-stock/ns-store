@@ -11,13 +11,13 @@
   "typings": "dist/index.d.ts",
   "scripts": {
     "rm": "rimraf dist",
+    "dev": "cp config/config.dev.json config/config.json",
     "tsc": "npm run rm && tsc -p tsconfig.development.json",
     "tslint": "tslint --project ./tslint.json",
     "test": "mocha dist/**/*.test.js --timeout 5000 --require intelli-espower-loader",
-    "prepare": "npm run rm && tsc -p tsconfig.json"
+    "pre": "cp config/config.pduc.json config/config.json && npm run rm && tsc -p tsconfig.json"
   },
   "dependencies": {
-    "mysql2": "^1.4.2",
     "reflect-metadata": "^0.1.10",
     "sequelize": "^4.8.4",
     "sequelize-typescript": "^0.5.0"
@@ -31,9 +31,11 @@
     "intelli-espower-loader": "^1.0.1",
     "mocha": "^3.5.0",
     "power-assert": "^1.4.4",
-    "ts-node": "^3.3.0",
-    "tslint": "^5.6.0",
     "rimraf": "^2.6.2",
+    "sqlite3": "^3.1.12",
+    "ts-node": "^3.3.0",
+    "mysql2": "^1.4.2",
+    "tslint": "^5.6.0",
     "typescript": "^2.4.2"
   }
 }

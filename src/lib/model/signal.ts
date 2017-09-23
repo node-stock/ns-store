@@ -1,5 +1,5 @@
 import { Table, Column, Model, DataType, ForeignKey } from 'sequelize-typescript';
-import SymbolInfo from './symbolinfo';
+import { SymbolInfo } from '../model';
 
 @Table({
   timestamps: true,
@@ -7,7 +7,7 @@ import SymbolInfo from './symbolinfo';
   underscored: true,
   comment: '信号'
 })
-export default class Transaction extends Model<Transaction> {
+export default class Signal extends Model<Signal> {
 
   @ForeignKey(() => SymbolInfo)
   @Column({

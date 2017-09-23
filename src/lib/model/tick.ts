@@ -1,7 +1,5 @@
 import { Table, Column, Model, DataType, ForeignKey } from 'sequelize-typescript';
-import Exchange from './exchange';
-import Market from './market';
-import SymbolInfo from './symbolinfo';
+import { Exchange, Market, SymbolInfo } from '../model';
 
 @Table({
   timestamps: true,

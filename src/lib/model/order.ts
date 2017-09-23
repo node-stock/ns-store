@@ -1,14 +1,13 @@
 import { Table, Column, Model, DataType, ForeignKey } from 'sequelize-typescript';
-import Account from './account';
-import SymbolInfo from './symbolinfo';
+import { Account, SymbolInfo } from '../model';
 
 @Table({
   timestamps: true,
   paranoid: true,
   underscored: true,
-  comment: '持仓'
+  comment: '订单'
 })
-export default class Position extends Model<Position> {
+export default class Order extends Model<Order> {
 
   @ForeignKey(() => Account)
   @Column({
@@ -43,8 +42,8 @@ export default class Position extends Model<Position> {
   quantity: number;
 
   @Column({
-    type: DataType.INTEGER(20),
-    comment: '累积盈亏'
+    type: DataType.CHAR(2),
+    comment: '状态'
   })
-  pnl: number;
+  state: number;
 }

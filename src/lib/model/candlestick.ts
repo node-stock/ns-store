@@ -1,6 +1,5 @@
 import { Table, Column, Model, DataType, ForeignKey, PrimaryKey } from 'sequelize-typescript';
-import Account from './account';
-import SymbolInfo from './symbolinfo';
+import { Account, SymbolInfo } from '../model';
 
 @Table({
   timestamps: true,

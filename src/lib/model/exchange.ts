@@ -1,5 +1,5 @@
 import { Table, Column, Model, DataType, HasMany } from 'sequelize-typescript';
-import Market from './market';
+import { Market } from '../model';
 
 @Table({
   timestamps: true,
@@ -21,6 +21,12 @@ export default class Exchange extends Model<Exchange> {
     comment: '名称'
   })
   name: string;
+
+  @Column({
+    type: DataType.STRING(10),
+    comment: '略称'
+  })
+  shortname: string;
 
   @Column({
     type: DataType.STRING(200),

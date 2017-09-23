@@ -1,1 +1,1 @@
-export * from './lib/template';
+export * from './lib/store';

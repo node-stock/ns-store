@@ -1,8 +1,5 @@
 import { Table, Column, Model, DataType, ForeignKey } from 'sequelize-typescript';
-import Exchange from './exchange';
-import Market from './market';
-import Sector from './sector';
-import Industry from './industry';
+import { Exchange, Market, Sector, Industry } from '../model';
 
 @Table({
   tableName: 'symbol_info',
