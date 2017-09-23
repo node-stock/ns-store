@@ -14,7 +14,7 @@
     "dev": "cp config/config.dev.json config/config.json",
     "tsc": "npm run rm && tsc -p tsconfig.development.json",
     "tslint": "tslint --project ./tslint.json",
-    "test": "mocha dist/**/*.test.js --timeout 5000 --require intelli-espower-loader",
+    "test": "mocha dist/**/*.test.js --timeout 3000 --require intelli-espower-loader",
     "pre": "cp config/config.pduc.json config/config.json && npm run rm && tsc -p tsconfig.json"
   },
   "dependencies": {
