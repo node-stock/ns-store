@@ -1,5 +1,5 @@
 import { Table, Column, Model, DataType, ForeignKey } from 'sequelize-typescript';
-import Exchange from './exchange';
+import { Exchange } from '../model';
 
 @Table({
   timestamps: true,
@@ -18,6 +18,7 @@ export default class Market extends Model<Market> {
 
   @ForeignKey(() => Exchange)
   @Column({
+    primaryKey: true,
     type: DataType.STRING(20),
     comment: '交易所'
   })

@@ -1,27 +1,21 @@
 import { Table, Column, Model, DataType, ForeignKey } from 'sequelize-typescript';
-import Exchange from './exchange';
+import { Exchange } from '../model';
 
 @Table({
+  tableName: 'symbol_type',
   timestamps: true,
   paranoid: true,
   underscored: true,
-  comment: '板块'
+  comment: '商品类型'
 })
-export default class Sector extends Model<Sector> {
+export default class SymbolType extends Model<SymbolType> {
 
   @Column({
     primaryKey: true,
-    type: DataType.STRING(50),
-    comment: '代码'
+    type: DataType.CHAR(3),
+    comment: '类型'
   })
-  code: string;
-
-  @ForeignKey(() => Exchange)
-  @Column({
-    type: DataType.STRING(20),
-    comment: '交易所'
-  })
-  exchange: string;
+  type: string;
 
   @Column({
     type: DataType.STRING(50),

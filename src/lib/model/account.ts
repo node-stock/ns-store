@@ -1,5 +1,5 @@
 import { Table, Column, Model, DataType, ForeignKey } from 'sequelize-typescript';
-import Position from './position';
+import { Position } from '../model';
 
 @Table({
   timestamps: true,
