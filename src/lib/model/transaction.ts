@@ -47,4 +47,19 @@ export default class Transaction extends Model<Transaction> {
     comment: '股数'
   })
   quantity: number;
+
+  @Column
+  get created_at(): string {
+    return this.getDataValue('created_at');
+  }
+
+  @Column
+  get updated_at(): string {
+    return this.getDataValue('updated_at');
+  }
+
+  @Column
+  get deleted_at(): string {
+    return this.getDataValue('deleted_at');
+  }
 }

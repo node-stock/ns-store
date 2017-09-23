@@ -1,27 +1,35 @@
 import * as assert from 'power-assert';
-import { Sequelize} from 'sequelize-typescript';
-import { StModel, StData } from './store';
+import {Store} from './store';
+import { Sequelize } from 'sequelize-typescript';
 
-const config = require('../../config/config');
-config.modelPaths = [__dirname + '/model'];
+const testBuildTable  = async (done: any) => {
+  await Store.buildTable();
+  assert(true);
+  done();
+}
 
-const sequelize = new Sequelize(config);
-
-console.log(__dirname + '/models');
-
-const testFetch  = async (done: any) => {
-  const res = await sequelize.sync({force: true});
-  await StModel.Sector.bulkCreate(StData.SectorList);
-  await StModel.Exchange.bulkCreate(StData.ExchangeList);
-  await StModel.Market.bulkCreate(StData.MarketList);
-
+const testFindAll  = async (done: any) => {
+  const sectorList = await Store.model.Sector.findAll({raw: true });
+  assert.ok(sectorList.length !== 0);
+  console.log(sectorList[0]);
   done();
 }
 
 describe('ns-store', () => {
-    it('自动建表并导入数据', function(done) {
-      this.timeout(10000);
-      testFetch(done);
+    before(() => {
+      console.log('测试预处理');
+      const config = require('../../config/config');
+      Store.init(config);
     });
-
+    it('自动建表并导入数据', function(done) {
+      this.timeout(20000);
+      testBuildTable(done);
+    });
+    it('findAll查询数据', function(done) {
+      testFindAll(done);
+    });
+    after(function() {
+      console.log('测试后处理');
+      Store.close();
+    });
 });

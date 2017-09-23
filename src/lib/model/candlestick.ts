@@ -52,4 +52,19 @@ export default class Candlestick extends Model<Candlestick> {
     comment: '成交量'
   })
   volume: number;
+
+  @Column
+  get created_at(): string {
+    return this.getDataValue('created_at');
+  }
+
+  @Column
+  get updated_at(): string {
+    return this.getDataValue('updated_at');
+  }
+
+  @Column
+  get deleted_at(): string {
+    return this.getDataValue('deleted_at');
+  }
 }
