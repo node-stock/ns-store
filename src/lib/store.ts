@@ -19,7 +19,9 @@ export class Store {
     return sequelize;
   }
   static close() {
-    this.sequelize.close();
+    if (this.sequelize) {
+      this.sequelize.close();
+    }
   }
 
   static async buildTable() {

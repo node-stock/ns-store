@@ -1,4 +1,4 @@
-import { Table, Column, Model, DataType, ForeignKey } from 'sequelize-typescript';
+import { Table, Column, Model, DataType, ForeignKey, Scopes, BelongsTo, HasOne } from 'sequelize-typescript';
 import { Exchange, Market, Sector, Industry } from '../model';
 
 @Table({
@@ -19,32 +19,40 @@ export default class SymbolInfo extends Model<SymbolInfo> {
 
   @ForeignKey(() => Exchange)
   @Column({
+    primaryKey: true,
     type: DataType.STRING(20),
     comment: '交易所'
   })
   exchange: string;
 
+  @BelongsTo(() => Exchange)
+  ex?: Exchange;
+
   @ForeignKey(() => Market)
   @Column({
+    primaryKey: true,
     type: DataType.STRING(20),
     comment: '交易市场'
   })
   market: string;
 
+  @BelongsTo(() => Market)
+  ma?: Market;
+
   @Column({
-    type: DataType.STRING(20),
+    type: DataType.STRING(50),
     comment: '名称'
   })
   name: string;
 
   @Column({
-    type: DataType.STRING(40),
+    type: DataType.STRING(100),
     comment: '全名'
   })
   full_name: string;
 
   @Column({
-    type: DataType.CHAR(2),
+    type: DataType.STRING(20),
     comment: '类型'
   })
   type: string;
@@ -56,12 +64,18 @@ export default class SymbolInfo extends Model<SymbolInfo> {
   })
   sector: string;
 
+  @BelongsTo(() => Sector)
+  se?: Sector;
+
   @ForeignKey(() => Industry)
   @Column({
     type: DataType.STRING(20),
     comment: '行业'
   })
   industry: string;
+
+  @BelongsTo(() => Industry)
+  in?: Industry;
 
   @Column
   get created_at(): string {

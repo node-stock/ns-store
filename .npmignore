@@ -1,2 +1,6 @@
-.npmignore
 config/config.dev.json
+/src
+/log
+/node_modules
+/npm-debug.log
+.idea

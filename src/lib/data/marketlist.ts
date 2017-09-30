@@ -1,10 +1,5 @@
 export const MarketList = [
   {
-    'code': 'main',
-    'name': '東証',
-    'exchange': 'TSE'
-  },
-  {
     'code': '1stSection',
     'name': '東証一部',
     'exchange': 'TSE',
