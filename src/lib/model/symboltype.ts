@@ -12,7 +12,7 @@ export default class SymbolType extends Model<SymbolType> {
 
   @Column({
     primaryKey: true,
-    type: DataType.CHAR(3),
+    type: DataType.STRING(20),
     comment: '类型'
   })
   type: string;
