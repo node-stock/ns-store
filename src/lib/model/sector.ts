@@ -18,6 +18,7 @@ export default class Sector extends Model<Sector> {
 
   @ForeignKey(() => Exchange)
   @Column({
+    primaryKey: true,
     type: DataType.STRING(20),
     comment: '交易所'
   })

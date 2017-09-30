@@ -1,4 +1,4 @@
-import { Table, Column, Model, DataType, ForeignKey } from 'sequelize-typescript';
+import { Table, Column, Model, DataType, ForeignKey, BelongsTo } from 'sequelize-typescript';
 import { Exchange } from '../model';
 
 @Table({
@@ -23,6 +23,9 @@ export default class Market extends Model<Market> {
     comment: '交易所'
   })
   exchange: string;
+
+  @BelongsTo(() => Exchange)
+  ex?: Exchange;
 
   @Column({
     type: DataType.STRING(50),
