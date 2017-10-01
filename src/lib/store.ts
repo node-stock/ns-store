@@ -13,14 +13,17 @@ export class Store {
   static sequelize: any = null;
 
   static init(config: any) {
-    const modelPath = path.join(path.dirname(__filename), '/model');
-    config.modelPaths = [modelPath];
-    const sequelize = this.sequelize = new Sequelize(config);
-    return sequelize;
+    if (!this.sequelize) {
+      const modelPath = path.join(path.dirname(__filename), '/model');
+      config.modelPaths = [modelPath];
+      this.sequelize = new Sequelize(config);
+    }
   }
+
   static close() {
     if (this.sequelize) {
       this.sequelize.close();
+      this.sequelize = null;
     }
   }
 
