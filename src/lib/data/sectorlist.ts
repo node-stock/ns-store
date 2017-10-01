@@ -137,7 +137,7 @@ export const SectorList = [
   {
     'exchange': 'TSE',
     'code': 'air-transporataion',
-    'name': '空運鉱業'
+    'name': '空運'
   },
   {
     'exchange': 'TSE',

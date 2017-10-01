@@ -3,5 +3,6 @@
   "dialect": "sqlite",
   "username": "root",
   "password": "",
-  "storage": ":memory:"
+  "storage": ":memory:",
+  "operatorsAliases": false
 }

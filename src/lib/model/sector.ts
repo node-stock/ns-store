@@ -5,7 +5,11 @@ import { Exchange } from '../model';
   timestamps: true,
   paranoid: true,
   underscored: true,
-  comment: '板块'
+  comment: '板块',
+  indexes: [{
+    unique: true,
+    fields: ['code', 'exchange']
+  }]
 })
 export default class Sector extends Model<Sector> {
 
