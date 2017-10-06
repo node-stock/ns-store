@@ -13,4 +13,5 @@ import Tick from './model/tick';
 import Transaction from './model/transaction';
 import Dde from './model/dde';
 
-export { Account, Candlestick, Exchange, Industry, Market, Order, Position, Sector, Signal, SymbolInfo, SymbolType, Tick, Transaction };
+export { Account, Candlestick, Exchange, Industry, Market, Order, Position };
+export { Sector, Signal, SymbolInfo, SymbolType, Tick, Transaction, Dde };
