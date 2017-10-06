@@ -1,9 +1,8 @@
 {
-  "host": "45.32.48.129",
-  "database": "blog",
-  "dialect": "mysql",
-  "username": "admin",
-  "password": "123124",
-  "timezone": "+09:00",
+  "database": "__",
+  "dialect": "sqlite",
+  "username": "root",
+  "password": "",
+  "storage": ":memory:",
   "operatorsAliases": false
 }
