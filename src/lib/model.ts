@@ -11,5 +11,6 @@ import SymbolInfo from './model/symbolinfo';
 import SymbolType from './model/symboltype';
 import Tick from './model/tick';
 import Transaction from './model/transaction';
+import Dde from './model/dde';
 
 export { Account, Candlestick, Exchange, Industry, Market, Order, Position, Sector, Signal, SymbolInfo, SymbolType, Tick, Transaction };
