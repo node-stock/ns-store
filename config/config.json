@@ -4,5 +4,6 @@
   "username": "root",
   "password": "",
   "storage": ":memory:",
-  "operatorsAliases": false
+  "operatorsAliases": false,
+  "logging": false
 }

@@ -1,6 +1,6 @@
 {
   "name": "ns-store",
-  "version": "0.0.12",
+  "version": "0.0.13",
   "description": "node-stock store module",
   "repository": {
     "type": "git",
