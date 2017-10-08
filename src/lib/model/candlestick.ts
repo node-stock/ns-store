@@ -17,11 +17,19 @@ export default class Candlestick extends Model<Candlestick> {
   })
   symbol: string;
 
+  @PrimaryKey
   @Column({
     type: DataType.STRING(10),
     comment: '日期'
   })
   date: string;
+
+  @PrimaryKey
+  @Column({
+    type: DataType.STRING(3),
+    comment: 'K线单位'
+  })
+  unit: string;
 
   @Column({
     type: DataType.FLOAT(10),
