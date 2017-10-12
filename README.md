@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/node-stock/ns-store.svg?branch=master)](https://travis-ci.org/node-stock/ns-store.svg)
+[![Build Status](https://travis-ci.org/node-stock/ns-store.svg?branch=master)](https://travis-ci.org/node-stock/ns-store)
 
 # ns-store
 

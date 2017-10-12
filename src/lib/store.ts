@@ -10,7 +10,7 @@ import { Sequelize } from 'sequelize-typescript';
 export class Store {
   static model = model;
   static data = data;
-  static sequelize: any = null;
+  static sequelize: Sequelize;
 
   static init(config: any) {
     if (!this.sequelize) {
@@ -21,14 +21,13 @@ export class Store {
   }
 
   static close() {
-    if (this.sequelize) {
+    if (this && this.sequelize) {
       this.sequelize.close();
-      this.sequelize = null;
     }
   }
 
   static async buildTable() {
-    await this.sequelize.sync({force: true});
+    await this.sequelize.sync({ force: true });
     await Store.model.Sector.bulkCreate(Store.data.SectorList);
     await Store.model.Exchange.bulkCreate(Store.data.ExchangeList);
     await Store.model.Market.bulkCreate(Store.data.MarketList);
