@@ -24,7 +24,7 @@ export default class Position extends Model<Position> {
   symbol: string;
 
   @Column({
-    type: DataType.CHAR(2),
+    type: DataType.CHAR(4),
     comment: '方向'
   })
   side: string;

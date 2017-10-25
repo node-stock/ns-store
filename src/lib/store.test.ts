@@ -10,7 +10,7 @@ const testBuildTable = async (done: any) => {
 
 const testFindAll = async (done: any) => {
   const sectorList = await Store.model.Sector.findAll({ raw: true });
-  assert.ok(sectorList.length !== 0);
+  assert(sectorList.length !== 0);
   console.log(sectorList[0]);
   done();
 }
@@ -18,8 +18,7 @@ const testFindAll = async (done: any) => {
 describe('ns-store', () => {
   before(() => {
     console.log('测试预处理');
-    const config = require('../../config/config');
-    Store.init(config);
+    Store.init(require('config').store);
   });
   it('自动建表并导入数据', function (done) {
     this.timeout(20000);

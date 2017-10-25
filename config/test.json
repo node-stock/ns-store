@@ -1,0 +1,11 @@
+{
+  "store": {
+    "host": "127.0.0.1",
+    "database": "test",
+    "dialect": "mysql",
+    "username": "root",
+    "timezone": "+09:00",
+    "operatorsAliases": false,
+    "logging": false
+  }
+}

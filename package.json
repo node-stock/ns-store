@@ -1,6 +1,6 @@
 {
   "name": "ns-store",
-  "version": "0.0.14",
+  "version": "0.0.16",
   "description": "node-stock store module",
   "repository": {
     "type": "git",
@@ -11,11 +11,10 @@
   "typings": "dist/index.d.ts",
   "scripts": {
     "rm": "rimraf dist",
-    "dev": "cp config/config.dev.json config/config.json",
     "tsc": "npm run rm && tsc -p tsconfig.development.json",
     "tslint": "tslint --project ./tslint.json",
-    "test": "mocha dist/**/*.test.js --timeout 3000 --require intelli-espower-loader",
-    "prepare": "cp config/config.pduc.json config/config.json && npm run rm && tsc -p tsconfig.json"
+    "test": "cross-env NODE_ENV=test mocha dist/**/*.test.js --timeout 3000 --require intelli-espower-loader",
+    "prepare": "npm run rm && tsc -p tsconfig.json"
   },
   "dependencies": {
     "reflect-metadata": "^0.1.10",
@@ -28,12 +27,13 @@
     "@types/node": "^8.0.20",
     "@types/power-assert": "^1.4.29",
     "config": "^1.26.1",
+    "cross-env": "^5.1.0",
     "intelli-espower-loader": "^1.0.1",
+    "lodash": "^4.17.4",
     "mocha": "^3.5.0",
     "mysql2": "^1.4.2",
     "power-assert": "^1.4.4",
     "rimraf": "^2.6.2",
-    "sqlite3": "^3.1.12",
     "ts-node": "^3.3.0",
     "tslint": "^5.6.0",
     "typescript": "^2.4.2"
