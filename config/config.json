@@ -1,9 +1,0 @@
-{
-  "database": "__",
-  "dialect": "sqlite",
-  "username": "root",
-  "password": "",
-  "storage": ":memory:",
-  "operatorsAliases": false,
-  "logging": false
-}
