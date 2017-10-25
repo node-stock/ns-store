@@ -1,6 +1,6 @@
 {
   "name": "ns-store",
-  "version": "0.0.15",
+  "version": "0.0.16",
   "description": "node-stock store module",
   "repository": {
     "type": "git",
@@ -29,6 +29,7 @@
     "config": "^1.26.1",
     "cross-env": "^5.1.0",
     "intelli-espower-loader": "^1.0.1",
+    "lodash": "^4.17.4",
     "mocha": "^3.5.0",
     "mysql2": "^1.4.2",
     "power-assert": "^1.4.4",
