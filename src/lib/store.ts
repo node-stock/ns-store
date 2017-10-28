@@ -1,7 +1,7 @@
 import * as model from './model';
 import * as data from './data';
 import * as path from 'path';
-import { Sequelize } from 'sequelize-typescript';
+import { Sequelize, ISequelizeConfig } from 'sequelize-typescript';
 
 /**
  * @class
@@ -12,7 +12,7 @@ export class Store {
   static data = data;
   static sequelize: Sequelize;
 
-  static init(config: any) {
+  static init(config: ISequelizeConfig) {
     if (!this.sequelize) {
       const modelPath = path.join(path.dirname(__filename), '/model');
       config.modelPaths = [modelPath];
