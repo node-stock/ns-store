@@ -34,6 +34,12 @@ export default class Signal extends Model<Signal> {
   })
   price: number;
 
+  @Column({
+    type: DataType.STRING(10),
+    comment: '备注'
+  })
+  notes: string;
+
   @Column
   get created_at(): string {
     return this.getDataValue('created_at');
