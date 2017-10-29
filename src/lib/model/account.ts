@@ -16,23 +16,17 @@ export default class Account extends Model<Account> {
   })
   id: string;
 
+  @Column({
+    type: DataType.BIGINT(20),
+    comment: '余额'
+  })
+  cash: number;
+
   @HasMany(() => Position)
   positions: Position[];
 
   @HasMany(() => Transaction)
   transactions: Transaction[];
-
-  @Column({
-    type: DataType.BIGINT(20),
-    comment: '可用资金'
-  })
-  cash: string;
-
-  @Column({
-    type: DataType.BIGINT(20),
-    comment: '冻结资金'
-  })
-  frozen_cash: string;
 
   @Column
   get created_at(): string {
