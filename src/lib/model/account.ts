@@ -20,7 +20,7 @@ export default class Account extends Model<Account> {
     type: DataType.BIGINT(20),
     comment: '余额'
   })
-  cash: number;
+  balance: number;
 
   @HasMany(() => Position)
   positions: Position[];
