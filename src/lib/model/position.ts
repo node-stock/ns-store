@@ -1,4 +1,4 @@
-import { Table, Column, Model, DataType, ForeignKey } from 'sequelize-typescript';
+import { Table, Column, Model, DataType, ForeignKey, AutoIncrement, BelongsTo } from 'sequelize-typescript';
 import { Account, SymbolInfo } from '../model';
 
 @Table({
@@ -9,12 +9,20 @@ import { Account, SymbolInfo } from '../model';
 })
 export default class Position extends Model<Position> {
 
-  @ForeignKey(() => Account)
+  @AutoIncrement
   @Column({
-    type: DataType.STRING(20),
-    comment: '账户'
+    type: DataType.INTEGER(20),
+    primaryKey: true,
+    comment: '持仓id'
   })
-  account: string;
+  id: number;
+
+  @ForeignKey(() => Account)
+  @Column
+  account_id: string;
+
+  @BelongsTo(() => Account)
+  account: Account;
 
   @ForeignKey(() => SymbolInfo)
   @Column({

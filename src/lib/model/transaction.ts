@@ -1,4 +1,4 @@
-import { Table, Column, Model, DataType, ForeignKey } from 'sequelize-typescript';
+import { Table, Column, Model, DataType, ForeignKey, BelongsTo } from 'sequelize-typescript';
 import { Account, SymbolInfo, Order } from '../model';
 
 @Table({
@@ -9,19 +9,19 @@ import { Account, SymbolInfo, Order } from '../model';
 })
 export default class Transaction extends Model<Transaction> {
 
+  @ForeignKey(() => Account)
+  @Column
+  account_id: string;
+
+  @BelongsTo(() => Account)
+  account: Account;
+
   @ForeignKey(() => Order)
   @Column({
     type: DataType.STRING(20),
     comment: '订单'
   })
   order: string;
-
-  @ForeignKey(() => Account)
-  @Column({
-    type: DataType.STRING(20),
-    comment: '账户'
-  })
-  account: string;
 
   @ForeignKey(() => SymbolInfo)
   @Column({
