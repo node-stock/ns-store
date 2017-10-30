@@ -5,6 +5,7 @@ import { Account, SymbolInfo } from '../model';
   timestamps: true,
   paranoid: true,
   underscored: true,
+  tableName: 'order',
   comment: '订单'
 })
 export default class Order extends Model<Order> {

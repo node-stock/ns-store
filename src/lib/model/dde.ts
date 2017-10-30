@@ -5,6 +5,7 @@ import { SymbolInfo } from '../model';
   timestamps: true,
   paranoid: true,
   underscored: true,
+  tableName: 'dde',
   comment: 'DDE实时数据'
 })
 export default class Dde extends Model<Dde> {

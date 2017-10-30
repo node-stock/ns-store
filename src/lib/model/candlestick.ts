@@ -5,6 +5,7 @@ import { Account, SymbolInfo } from '../model';
   timestamps: true,
   paranoid: true,
   underscored: true,
+  tableName: 'candlestick',
   comment: 'K线数据'
 })
 export default class Candlestick extends Model<Candlestick> {

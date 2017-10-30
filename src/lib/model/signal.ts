@@ -5,6 +5,7 @@ import { SymbolInfo } from '../model';
   timestamps: true,
   paranoid: true,
   underscored: true,
+  tableName: 'signal',
   comment: '信号'
 })
 export default class Signal extends Model<Signal> {
