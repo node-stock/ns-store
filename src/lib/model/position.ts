@@ -5,6 +5,7 @@ import { Account, SymbolInfo } from '../model';
   timestamps: true,
   paranoid: true,
   underscored: true,
+  tableName: 'position',
   comment: '持仓'
 })
 export default class Position extends Model<Position> {

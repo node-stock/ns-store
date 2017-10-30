@@ -5,6 +5,7 @@ import { Account, SymbolInfo, Order } from '../model';
   timestamps: true,
   paranoid: true,
   underscored: true,
+  tableName: 'transaction',
   comment: '交易记录'
 })
 export default class Transaction extends Model<Transaction> {

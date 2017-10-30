@@ -5,6 +5,7 @@ import { Position, Transaction } from '../model';
   timestamps: true,
   paranoid: true,
   underscored: true,
+  tableName: 'account',
   comment: '账户'
 })
 export default class Account extends Model<Account> {

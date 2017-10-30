@@ -5,6 +5,7 @@ import { Exchange, Market, SymbolInfo } from '../model';
   timestamps: true,
   paranoid: true,
   underscored: true,
+  tableName: 'tick',
   comment: '逐笔数据'
 })
 export default class Tick extends Model<Tick> {

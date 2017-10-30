@@ -5,6 +5,7 @@ import { Market } from '../model';
   timestamps: true,
   paranoid: true,
   underscored: true,
+  tableName: 'exchange',
   comment: '交易所'
 })
 export default class Exchange extends Model<Exchange> {

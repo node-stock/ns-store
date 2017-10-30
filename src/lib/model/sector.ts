@@ -6,6 +6,7 @@ import { Exchange } from '../model';
   paranoid: true,
   underscored: true,
   comment: '板块',
+  tableName: 'sector',
   indexes: [{
     unique: true,
     fields: ['code', 'exchange']
