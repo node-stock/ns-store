@@ -1,4 +1,4 @@
-import { Table, Column, Model, DataType, ForeignKey } from 'sequelize-typescript';
+import { Table, Column, Model, DataType, ForeignKey, AutoIncrement } from 'sequelize-typescript';
 import { SymbolInfo } from '../model';
 
 @Table({
@@ -10,21 +10,38 @@ import { SymbolInfo } from '../model';
 })
 export default class Dde extends Model<Dde> {
 
+  @AutoIncrement
+  @Column({
+    type: DataType.INTEGER(20),
+    primaryKey: true
+  })
+  id: number;
+
   @Column({
     type: DataType.STRING(10),
-    comment: '服务名'
+    comment: '日期',
+    primaryKey: true
+  })
+  date: string;
+
+  @Column({
+    type: DataType.STRING(10),
+    comment: '服务名',
+    primaryKey: true
   })
   service: string;
 
   @Column({
     type: DataType.STRING(20),
-    comment: '主题名'
+    comment: '主题名',
+    primaryKey: true
   })
   topic: string;
 
   @Column({
     type: DataType.STRING(50),
-    comment: '数据项目名'
+    comment: '数据项目名',
+    primaryKey: true
   })
   item: string;
 
