@@ -41,6 +41,12 @@ export default class Signal extends Model<Signal> {
   })
   notes: string;
 
+  @Column({
+    type: DataType.CHAR(1),
+    comment: '回测模式'
+  })
+  backtest: string;
+
   @Column
   get created_at(): string {
     return this.getDataValue('created_at');

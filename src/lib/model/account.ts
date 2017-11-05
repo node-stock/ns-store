@@ -23,6 +23,12 @@ export default class Account extends Model<Account> {
   })
   balance: number;
 
+  @Column({
+    type: DataType.CHAR(1),
+    comment: '回测模式'
+  })
+  backtest: string;
+
   @HasMany(() => Position)
   positions: Position[];
 
