@@ -55,6 +55,12 @@ export default class Order extends Model<Order> {
   })
   state: number;
 
+  @Column({
+    type: DataType.STRING(20),
+    comment: '模拟时间'
+  })
+  mocktime: string;
+
   @Column
   get created_at(): string {
     return this.getDataValue('created_at');

@@ -56,6 +56,12 @@ export default class Position extends Model<Position> {
   })
   pnl: number;
 
+  @Column({
+    type: DataType.STRING(20),
+    comment: '模拟时间'
+  })
+  mocktime: string;
+
   @Column
   get created_at(): string {
     return this.getDataValue('created_at');
