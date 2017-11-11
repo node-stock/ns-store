@@ -47,6 +47,12 @@ export default class Signal extends Model<Signal> {
   })
   backtest: string;
 
+  @Column({
+    type: DataType.STRING(20),
+    comment: '模拟时间'
+  })
+  mocktime: string;
+
   @Column
   get created_at(): string {
     return this.getDataValue('created_at');

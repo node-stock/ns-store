@@ -56,6 +56,12 @@ export default class Order extends Model<Order> {
   state: number;
 
   @Column({
+    type: DataType.CHAR(1),
+    comment: '回测模式'
+  })
+  backtest: string;
+
+  @Column({
     type: DataType.STRING(20),
     comment: '模拟时间'
   })
