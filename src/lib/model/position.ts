@@ -33,52 +33,28 @@ export default class Position extends Model<Position> {
   symbol: string;
 
   @Column({
-    type: DataType.CHAR(10),
+    type: DataType.CHAR(4),
     comment: '方向'
   })
   side: string;
 
   @Column({
-    type: DataType.INTEGER(10),
-    comment: '股数'
-  })
-  quantity: number;
-
-  @Column({
-    type: DataType.INTEGER(20),
-    comment: '利润'
-  })
-  profit: number;
-
-  @Column({
     type: DataType.FLOAT(10),
-    comment: '开仓价格'
+    comment: '价格'
   })
-  open: number;
-
-  @Column({
-    type: DataType.FLOAT(10),
-    comment: '平仓价格'
-  })
-  close: number;
-
-  @Column({
-    type: DataType.FLOAT(10),
-    comment: '手续费'
-  })
-  fee: number;
-
-  @Column({
-    type: DataType.CHAR(1),
-    comment: '回测模式'
-  })
-  backtest: string;
+  price: number;
 
   @Column({
     type: DataType.STRING(20),
     comment: '模拟时间'
   })
   mocktime: string;
+
+  @Column({
+    type: DataType.INTEGER(10),
+    comment: '股数'
+  })
+  quantity: number;
 
   @Column
   get created_at(): string {

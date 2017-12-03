@@ -1,4 +1,4 @@
-import { Table, Column, Model, DataType, ForeignKey, PrimaryKey, AutoIncrement } from 'sequelize-typescript';
+import { Table, Column, Model, DataType, ForeignKey, BelongsTo, AutoIncrement } from 'sequelize-typescript';
 import { Account, SymbolInfo } from '../model';
 
 @Table({
@@ -22,6 +22,9 @@ export default class Earning extends Model<Earning> {
   @Column
   account_id: string;
 
+  @BelongsTo(() => Account)
+  account: Account;
+
   @ForeignKey(() => SymbolInfo)
   @Column({
     type: DataType.STRING(20),
@@ -42,10 +45,28 @@ export default class Earning extends Model<Earning> {
   quantity: number;
 
   @Column({
-    type: DataType.CHAR(2),
-    comment: '状态'
+    type: DataType.INTEGER(20),
+    comment: '利润'
   })
-  state: number;
+  profit: number;
+
+  @Column({
+    type: DataType.FLOAT(10),
+    comment: '开仓价格'
+  })
+  open: number;
+
+  @Column({
+    type: DataType.FLOAT(10),
+    comment: '平仓价格'
+  })
+  close: number;
+
+  @Column({
+    type: DataType.FLOAT(10),
+    comment: '手续费'
+  })
+  fee: number;
 
   @Column({
     type: DataType.CHAR(1),
