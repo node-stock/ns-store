@@ -36,12 +36,6 @@ export default class Earning extends Model<Earning> {
   side: string;
 
   @Column({
-    type: DataType.FLOAT(10),
-    comment: '价格'
-  })
-  price: number;
-
-  @Column({
     type: DataType.INTEGER(10),
     comment: '股数'
   })
