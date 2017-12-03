@@ -24,7 +24,7 @@ export default class Signal extends Model<Signal> {
   timeframe: string;
 
   @Column({
-    type: DataType.CHAR(4),
+    type: DataType.CHAR(10),
     comment: '方向'
   })
   side: string;

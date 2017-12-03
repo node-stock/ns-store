@@ -32,7 +32,7 @@ export default class Transaction extends Model<Transaction> {
   symbol: string;
 
   @Column({
-    type: DataType.CHAR(4),
+    type: DataType.CHAR(10),
     comment: '方向'
   })
   side: string;

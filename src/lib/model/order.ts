@@ -32,7 +32,7 @@ export default class Order extends Model<Order> {
   symbol: string;
 
   @Column({
-    type: DataType.CHAR(4),
+    type: DataType.CHAR(10),
     comment: '方向'
   })
   side: string;

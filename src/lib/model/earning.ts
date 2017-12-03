@@ -1,29 +1,26 @@
-import { Table, Column, Model, DataType, ForeignKey, AutoIncrement, BelongsTo } from 'sequelize-typescript';
+import { Table, Column, Model, DataType, ForeignKey, PrimaryKey, AutoIncrement } from 'sequelize-typescript';
 import { Account, SymbolInfo } from '../model';
 
 @Table({
   timestamps: true,
   paranoid: true,
   underscored: true,
-  tableName: 'position',
-  comment: '持仓'
+  tableName: 'earning',
+  comment: '收益'
 })
-export default class Position extends Model<Position> {
+export default class Earning extends Model<Earning> {
 
   @AutoIncrement
   @Column({
     type: DataType.INTEGER(20),
     primaryKey: true,
-    comment: '持仓id'
+    comment: '收益id'
   })
   id: number;
 
   @ForeignKey(() => Account)
   @Column
   account_id: string;
-
-  @BelongsTo(() => Account)
-  account: Account;
 
   @ForeignKey(() => SymbolInfo)
   @Column({
@@ -39,34 +36,22 @@ export default class Position extends Model<Position> {
   side: string;
 
   @Column({
+    type: DataType.FLOAT(10),
+    comment: '价格'
+  })
+  price: number;
+
+  @Column({
     type: DataType.INTEGER(10),
     comment: '股数'
   })
   quantity: number;
 
   @Column({
-    type: DataType.INTEGER(20),
-    comment: '利润'
+    type: DataType.CHAR(2),
+    comment: '状态'
   })
-  profit: number;
-
-  @Column({
-    type: DataType.FLOAT(10),
-    comment: '开仓价格'
-  })
-  open: number;
-
-  @Column({
-    type: DataType.FLOAT(10),
-    comment: '平仓价格'
-  })
-  close: number;
-
-  @Column({
-    type: DataType.FLOAT(10),
-    comment: '手续费'
-  })
-  fee: number;
+  state: number;
 
   @Column({
     type: DataType.CHAR(1),
