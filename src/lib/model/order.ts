@@ -38,13 +38,13 @@ export default class Order extends Model<Order> {
   side: string;
 
   @Column({
-    type: DataType.FLOAT(10),
+    type: DataType.DECIMAL(20, 10),
     comment: '价格'
   })
   price: number;
 
   @Column({
-    type: DataType.INTEGER(10),
+    type: DataType.DECIMAL(20, 10),
     comment: '股数'
   })
   quantity: number;

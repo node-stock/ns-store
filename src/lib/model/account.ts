@@ -18,7 +18,7 @@ export default class Account extends Model<Account> {
   id: string;
 
   @Column({
-    type: DataType.BIGINT(20),
+    type: DataType.DECIMAL(20, 10),
     comment: '余额'
   })
   balance: number;
