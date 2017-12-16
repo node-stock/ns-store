@@ -24,6 +24,12 @@ export default class Account extends Model<Account> {
   balance: number;
 
   @Column({
+    type: DataType.DECIMAL(20, 10),
+    comment: '比特币'
+  })
+  bitcoin: number;
+
+  @Column({
     type: DataType.CHAR(1),
     comment: '回测模式'
   })
