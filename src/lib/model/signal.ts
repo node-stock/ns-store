@@ -19,12 +19,6 @@ export default class Signal extends Model<Signal> {
 
   @Column({
     type: DataType.STRING(10),
-    comment: '商品类型'
-  })
-  type: string;
-
-  @Column({
-    type: DataType.STRING(10),
     comment: '时间框架'
   })
   timeframe: string;
