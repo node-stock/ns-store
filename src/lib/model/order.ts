@@ -13,16 +13,16 @@ export default class Order extends Model<Order> {
   @PrimaryKey
   @Column({
     type: DataType.STRING(20),
-    comment: '订单号'
+    comment: '订单id'
   })
-  no: string;
+  id: string;
 
   @ForeignKey(() => Account)
   @Column({
     type: DataType.STRING(20),
-    comment: '账户'
+    comment: '账户id'
   })
-  account: string;
+  account_id: string;
 
   @ForeignKey(() => SymbolInfo)
   @Column({
@@ -50,10 +50,10 @@ export default class Order extends Model<Order> {
   quantity: number;
 
   @Column({
-    type: DataType.CHAR(2),
+    type: DataType.CHAR(10),
     comment: '状态'
   })
-  state: number;
+  status: string;
 
   @Column({
     type: DataType.CHAR(1),
