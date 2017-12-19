@@ -32,6 +32,12 @@ export default class Order extends Model<Order> {
   symbol: string;
 
   @Column({
+    type: DataType.STRING(10),
+    comment: '商品类型'
+  })
+  type: string;
+
+  @Column({
     type: DataType.CHAR(10),
     comment: '方向'
   })
