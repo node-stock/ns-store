@@ -56,7 +56,7 @@ export default class Order extends Model<Order> {
   quantity: number;
 
   @Column({
-    type: DataType.CHAR(10),
+    type: DataType.CHAR(20),
     comment: '状态'
   })
   status: string;
