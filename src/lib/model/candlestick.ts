@@ -27,40 +27,40 @@ export default class Candlestick extends Model<Candlestick> {
 
   @PrimaryKey
   @Column({
-    type: DataType.STRING(3),
+    type: DataType.STRING(10),
     comment: 'K线单位'
   })
   unit: string;
 
   @Column({
-    type: DataType.FLOAT(10),
+    type: DataType.STRING(20),
     comment: '收盘价'
   })
-  close: number;
+  close: string;
 
   @Column({
-    type: DataType.FLOAT(10),
+    type: DataType.STRING(20),
     comment: '开盘价'
   })
-  open: number;
+  open: string;
 
   @Column({
-    type: DataType.FLOAT(10),
+    type: DataType.STRING(20),
     comment: '最高价'
   })
-  high: number;
+  high: string;
 
   @Column({
-    type: DataType.FLOAT(10),
+    type: DataType.STRING(20),
     comment: '最低价'
   })
-  low: number;
+  low: string;
 
   @Column({
-    type: DataType.BIGINT(50),
+    type: DataType.STRING(20),
     comment: '成交量'
   })
-  volume: number;
+  volume: string;
 
   @Column
   get created_at(): string {

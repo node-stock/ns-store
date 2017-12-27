@@ -45,10 +45,10 @@ export default class Position extends Model<Position> {
   side: string;
 
   @Column({
-    type: DataType.DECIMAL(20, 10),
+    type: DataType.STRING(20),
     comment: '价格'
   })
-  price: number;
+  price: string;
 
   @Column({
     type: DataType.STRING(20),
@@ -57,10 +57,10 @@ export default class Position extends Model<Position> {
   mocktime: string;
 
   @Column({
-    type: DataType.DECIMAL(20, 10),
+    type: DataType.STRING(20),
     comment: '股数'
   })
-  quantity: number;
+  quantity: string;
 
   @Column
   get created_at(): string {

@@ -44,16 +44,16 @@ export default class Order extends Model<Order> {
   side: string;
 
   @Column({
-    type: DataType.DECIMAL(20, 10),
+    type: DataType.STRING(20),
     comment: '价格'
   })
-  price: number;
+  price: string;
 
   @Column({
-    type: DataType.DECIMAL(20, 10),
+    type: DataType.STRING(20),
     comment: '股数'
   })
-  quantity: number;
+  quantity: string;
 
   @Column({
     type: DataType.CHAR(20),

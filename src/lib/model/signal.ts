@@ -36,10 +36,10 @@ export default class Signal extends Model<Signal> {
   side: string;
 
   @Column({
-    type: DataType.DECIMAL(20, 10),
+    type: DataType.STRING(20),
     comment: '价格'
   })
-  price: number;
+  price: string;
 
   @Column({
     type: DataType.STRING(80),

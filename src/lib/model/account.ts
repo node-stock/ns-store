@@ -18,13 +18,13 @@ export default class Account extends Model<Account> {
   id: string;
 
   @Column({
-    type: DataType.DECIMAL(20, 10),
+    type: DataType.STRING(20),
     comment: '余额'
   })
   balance: number;
 
   @Column({
-    type: DataType.DECIMAL(20, 10),
+    type: DataType.STRING(20),
     comment: '比特币'
   })
   bitcoin: number;

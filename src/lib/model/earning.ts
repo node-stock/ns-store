@@ -45,34 +45,34 @@ export default class Earning extends Model<Earning> {
   side: string;
 
   @Column({
-    type: DataType.DECIMAL(20, 10),
+    type: DataType.STRING(20),
     comment: '股数'
   })
-  quantity: number;
+  quantity: string;
 
   @Column({
-    type: DataType.DECIMAL(20, 10),
+    type: DataType.STRING(20),
     comment: '利润'
   })
-  profit: number;
+  profit: string;
 
   @Column({
-    type: DataType.DECIMAL(20, 10),
+    type: DataType.STRING(20),
     comment: '开仓价格'
   })
-  open: number;
+  open: string;
 
   @Column({
-    type: DataType.DECIMAL(20, 10),
+    type: DataType.STRING(20),
     comment: '平仓价格'
   })
-  close: number;
+  close: string;
 
   @Column({
-    type: DataType.DECIMAL(20, 10),
+    type: DataType.STRING(20),
     comment: '手续费'
   })
-  fee: number;
+  fee: string;
 
   @Column({
     type: DataType.CHAR(1),
