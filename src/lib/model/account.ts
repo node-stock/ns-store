@@ -21,13 +21,13 @@ export default class Account extends Model<Account> {
     type: DataType.STRING(20),
     comment: '余额'
   })
-  balance: number;
+  balance: string;
 
   @Column({
     type: DataType.STRING(20),
     comment: '比特币'
   })
-  bitcoin: number;
+  bitcoin: string;
 
   @Column({
     type: DataType.CHAR(1),
