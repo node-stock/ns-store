@@ -38,59 +38,59 @@ export default class Tick extends Model<Tick> {
   date: string;
 
   @Column({
-    type: DataType.FLOAT(10),
+    type: DataType.STRING(20),
     comment: '价格'
   })
-  price: number;
+  price: string;
 
   @Column({
-    type: DataType.BIGINT(50),
+    type: DataType.STRING(20),
     comment: '成交量'
   })
-  volume: number;
+  volume: string;
 
   @Column({
-    type: DataType.BIGINT(50),
+    type: DataType.STRING(20),
     comment: '成交价'
   })
-  turnover: number;
+  turnover: string;
 
   @Column({
-    type: DataType.BIGINT(50),
+    type: DataType.STRING(20),
     comment: '超出买出量'
   })
-  over_vol: number;
+  over_vol: string;
 
   @Column({
-    type: DataType.BIGINT(50),
+    type: DataType.STRING(20),
     comment: '超出买入量'
   })
-  under_vol: number;
+  under_vol: string;
 
   @Column({
-    type: DataType.FLOAT(10),
+    type: DataType.STRING(20),
     comment: '卖1~10'
   })
-  bid: number[];
+  bid: string[];
 
   @Column({
-    type: DataType.FLOAT(10),
+    type: DataType.STRING(20),
     comment: '卖出量1~10'
   })
-  bid_vol: number[];
+  bid_vol: string[];
 
   @Column({
-    type: DataType.FLOAT(10),
+    type: DataType.STRING(20),
     comment: '买1~10'
   })
-  ask: number[];
+  ask: string[];
 
   @Column({
-    type: DataType.FLOAT(10),
+    type: DataType.STRING(20),
     comment: '买入量1~10'
   })
   // TODO
-  ask_vol: number[];
+  ask_vol: string[];
 
   @Column
   get created_at(): string {

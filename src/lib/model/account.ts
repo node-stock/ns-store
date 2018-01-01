@@ -18,10 +18,22 @@ export default class Account extends Model<Account> {
   id: string;
 
   @Column({
-    type: DataType.BIGINT(20),
+    type: DataType.STRING(20),
     comment: '余额'
   })
-  balance: number;
+  balance: string;
+
+  @Column({
+    type: DataType.STRING(20),
+    comment: '比特币'
+  })
+  bitcoin: string;
+
+  @Column({
+    type: DataType.CHAR(1),
+    comment: '回测模式'
+  })
+  backtest: string;
 
   @HasMany(() => Position)
   positions: Position[];

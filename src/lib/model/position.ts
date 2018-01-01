@@ -33,28 +33,34 @@ export default class Position extends Model<Position> {
   symbol: string;
 
   @Column({
-    type: DataType.CHAR(4),
+    type: DataType.STRING(10),
+    comment: '商品类型'
+  })
+  type: string;
+
+  @Column({
+    type: DataType.CHAR(10),
     comment: '方向'
   })
   side: string;
 
   @Column({
-    type: DataType.FLOAT(10),
+    type: DataType.STRING(20),
     comment: '价格'
   })
-  price: number;
+  price: string;
 
   @Column({
-    type: DataType.INTEGER(10),
+    type: DataType.STRING(20),
+    comment: '模拟时间'
+  })
+  mocktime: string;
+
+  @Column({
+    type: DataType.STRING(20),
     comment: '股数'
   })
-  quantity: number;
-
-  @Column({
-    type: DataType.INTEGER(20),
-    comment: '累积盈亏'
-  })
-  pnl: number;
+  quantity: string;
 
   @Column
   get created_at(): string {

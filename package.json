@@ -1,6 +1,6 @@
 {
   "name": "ns-store",
-  "version": "0.0.23",
+  "version": "0.0.42",
   "description": "node-stock store module",
   "repository": {
     "type": "git",
@@ -13,13 +13,14 @@
     "rm": "rimraf dist",
     "tsc": "npm run rm && tsc -p tsconfig.development.json",
     "tslint": "tslint --project ./tslint.json",
-    "test": "cross-env NODE_ENV=test mocha dist/**/*.test.js --timeout 3000 --require intelli-espower-loader",
+    "test": "cross-env NODE_ENV=test mocha dist/**/*.test.js --timeout 60000 --require intelli-espower-loader",
     "prepare": "npm run rm && tsc -p tsconfig.json"
   },
   "dependencies": {
     "reflect-metadata": "^0.1.10",
     "sequelize": "^4.8.4",
-    "sequelize-typescript": "^0.5.0"
+    "sequelize-typescript": "^0.5.0",
+    "toml": "^2.3.3"
   },
   "devDependencies": {
     "@types/config": "0.0.32",

@@ -19,27 +19,45 @@ export default class Signal extends Model<Signal> {
 
   @Column({
     type: DataType.STRING(10),
+    comment: '商品类型'
+  })
+  type: string;
+
+  @Column({
+    type: DataType.STRING(10),
     comment: '时间框架'
   })
   timeframe: string;
 
   @Column({
-    type: DataType.CHAR(4),
+    type: DataType.CHAR(10),
     comment: '方向'
   })
   side: string;
 
   @Column({
-    type: DataType.FLOAT(10),
+    type: DataType.STRING(20),
     comment: '价格'
   })
-  price: number;
+  price: string;
 
   @Column({
-    type: DataType.STRING(10),
+    type: DataType.STRING(80),
     comment: '备注'
   })
   notes: string;
+
+  @Column({
+    type: DataType.CHAR(1),
+    comment: '回测模式'
+  })
+  backtest: string;
+
+  @Column({
+    type: DataType.STRING(20),
+    comment: '模拟时间'
+  })
+  mocktime: string;
 
   @Column
   get created_at(): string {

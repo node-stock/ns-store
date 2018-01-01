@@ -13,16 +13,16 @@ export default class Order extends Model<Order> {
   @PrimaryKey
   @Column({
     type: DataType.STRING(20),
-    comment: '订单号'
+    comment: '订单id'
   })
-  no: string;
+  id: string;
 
   @ForeignKey(() => Account)
   @Column({
     type: DataType.STRING(20),
-    comment: '账户'
+    comment: '账户id'
   })
-  account: string;
+  account_id: string;
 
   @ForeignKey(() => SymbolInfo)
   @Column({
@@ -32,28 +32,46 @@ export default class Order extends Model<Order> {
   symbol: string;
 
   @Column({
-    type: DataType.CHAR(4),
+    type: DataType.STRING(10),
+    comment: '商品类型'
+  })
+  type: string;
+
+  @Column({
+    type: DataType.CHAR(10),
     comment: '方向'
   })
   side: string;
 
   @Column({
-    type: DataType.FLOAT(10),
+    type: DataType.STRING(20),
     comment: '价格'
   })
-  price: number;
+  price: string;
 
   @Column({
-    type: DataType.INTEGER(10),
+    type: DataType.STRING(20),
     comment: '股数'
   })
-  quantity: number;
+  quantity: string;
 
   @Column({
-    type: DataType.CHAR(2),
+    type: DataType.CHAR(20),
     comment: '状态'
   })
-  state: number;
+  status: string;
+
+  @Column({
+    type: DataType.CHAR(1),
+    comment: '回测模式'
+  })
+  backtest: string;
+
+  @Column({
+    type: DataType.STRING(20),
+    comment: '模拟时间'
+  })
+  mocktime: string;
 
   @Column
   get created_at(): string {
