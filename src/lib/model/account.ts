@@ -1,5 +1,5 @@
 import { Table, Column, Model, DataType, ForeignKey, PrimaryKey, HasMany } from 'sequelize-typescript';
-import { Position, Transaction } from '../model';
+import { Asset, Position, Transaction } from '../model';
 
 @Table({
   timestamps: true,
@@ -18,22 +18,13 @@ export default class Account extends Model<Account> {
   id: string;
 
   @Column({
-    type: DataType.STRING(20),
-    comment: '余额'
-  })
-  balance: string;
-
-  @Column({
-    type: DataType.STRING(20),
-    comment: '比特币'
-  })
-  bitcoin: string;
-
-  @Column({
     type: DataType.CHAR(1),
     comment: '回测模式'
   })
   backtest: string;
+
+  @HasMany(() => Asset)
+  assets: Asset[];
 
   @HasMany(() => Position)
   positions: Position[];

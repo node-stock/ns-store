@@ -1,4 +1,5 @@
 import Account from './model/account';
+import Asset from './model/asset';
 import Candlestick from './model/candlestick';
 import Exchange from './model/exchange';
 import Industry from './model/industry';
@@ -14,5 +15,5 @@ import Transaction from './model/transaction';
 import Dde from './model/dde';
 import Earning from './model/earning';
 
-export { Account, Candlestick, Exchange, Industry, Market, Order, Position };
+export { Account, Asset, Candlestick, Exchange, Industry, Market, Order, Position };
 export { Sector, Signal, SymbolInfo, SymbolType, Tick, Transaction, Dde, Earning };
