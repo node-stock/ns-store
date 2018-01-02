@@ -1,4 +1,5 @@
 import { Table, Column, Model, DataType, ForeignKey, PrimaryKey } from 'sequelize-typescript';
+import { Account, SymbolInfo } from '../model';
 
 @Table({
   timestamps: true,
@@ -16,11 +17,15 @@ export default class Asset extends Model<Asset> {
   })
   asset: string;
 
-  @Column({
-    type: DataType.STRING(20),
-    comment: '账户id'
-  })
+  @ForeignKey(() => Account)
+  @Column
   account_id: string;
+
+  @Column({
+    type: DataType.STRING(10),
+    comment: '商品类型'
+  })
+  type: string;
 
   @Column({
     type: DataType.INTEGER(10),
