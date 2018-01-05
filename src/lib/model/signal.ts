@@ -24,6 +24,24 @@ export default class Signal extends Model<Signal> {
   type: string;
 
   @Column({
+    type: DataType.CHAR(1),
+    comment: '回测模式'
+  })
+  backtest: string;
+
+  @Column({
+    type: DataType.STRING(20),
+    comment: '信号时间'
+  })
+  time: string;
+
+  @Column({
+    type: DataType.STRING(20),
+    comment: '模拟时间'
+  })
+  mocktime: string;
+
+  @Column({
     type: DataType.STRING(10),
     comment: '时间框架'
   })
@@ -46,18 +64,6 @@ export default class Signal extends Model<Signal> {
     comment: '备注'
   })
   notes: string;
-
-  @Column({
-    type: DataType.CHAR(1),
-    comment: '回测模式'
-  })
-  backtest: string;
-
-  @Column({
-    type: DataType.STRING(20),
-    comment: '模拟时间'
-  })
-  mocktime: string;
 
   @Column
   get created_at(): string {

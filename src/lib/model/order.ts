@@ -1,5 +1,5 @@
 import { Table, Column, Model, DataType, ForeignKey, PrimaryKey } from 'sequelize-typescript';
-import { Account, SymbolInfo } from '../model';
+import { Account, Signal, SymbolInfo } from '../model';
 
 @Table({
   timestamps: true,
@@ -23,6 +23,13 @@ export default class Order extends Model<Order> {
     comment: '账户id'
   })
   account_id: string;
+
+  @ForeignKey(() => Signal)
+  @Column({
+    type: DataType.STRING(20),
+    comment: '信号id'
+  })
+  signal_id: string;
 
   @ForeignKey(() => SymbolInfo)
   @Column({

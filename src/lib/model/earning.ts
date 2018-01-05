@@ -57,6 +57,12 @@ export default class Earning extends Model<Earning> {
   profit: string;
 
   @Column({
+    type: DataType.STRING(10),
+    comment: '点差'
+  })
+  pips: string;
+
+  @Column({
     type: DataType.STRING(20),
     comment: '开仓价格'
   })

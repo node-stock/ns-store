@@ -22,7 +22,7 @@ export default class Transaction extends Model<Transaction> {
     type: DataType.STRING(20),
     comment: '订单'
   })
-  order: string;
+  order_no: string;
 
   @ForeignKey(() => SymbolInfo)
   @Column({

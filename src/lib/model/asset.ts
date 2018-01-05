@@ -1,4 +1,4 @@
-import { Table, Column, Model, DataType, ForeignKey, PrimaryKey } from 'sequelize-typescript';
+import { Table, Column, Model, DataType, ForeignKey, PrimaryKey, BelongsTo } from 'sequelize-typescript';
 import { Account, SymbolInfo } from '../model';
 
 @Table({
@@ -18,8 +18,12 @@ export default class Asset extends Model<Asset> {
   asset: string;
 
   @ForeignKey(() => Account)
+  @PrimaryKey
   @Column
   account_id: string;
+
+  @BelongsTo(() => Account)
+  account: Account;
 
   @Column({
     type: DataType.STRING(10),
@@ -31,7 +35,7 @@ export default class Asset extends Model<Asset> {
     type: DataType.INTEGER(10),
     comment: '小数点精度'
   })
-  amount_precision: string;
+  amount_precision: number;
 
   @Column({
     type: DataType.STRING(20),
