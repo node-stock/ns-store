@@ -1,36 +1,29 @@
-import { Table, Column, Model, DataType, ForeignKey, AutoIncrement, BelongsTo } from 'sequelize-typescript';
+import { Table, Column, Model, DataType, ForeignKey, PrimaryKey, BelongsTo } from 'sequelize-typescript';
 import { Account, SymbolInfo } from '../model';
 
 @Table({
   timestamps: true,
   paranoid: true,
   underscored: true,
-  tableName: 'position',
-  comment: '持仓'
+  tableName: 'asset',
+  comment: '资产'
 })
-export default class Position extends Model<Position> {
+export default class Asset extends Model<Asset> {
 
-  @AutoIncrement
   @Column({
-    type: DataType.INTEGER(20),
     primaryKey: true,
-    comment: '持仓id'
+    type: DataType.STRING(10),
+    comment: '资产名'
   })
-  id: number;
+  asset: string;
 
   @ForeignKey(() => Account)
+  @PrimaryKey
   @Column
   account_id: string;
 
   @BelongsTo(() => Account)
   account: Account;
-
-  @ForeignKey(() => SymbolInfo)
-  @Column({
-    type: DataType.STRING(20),
-    comment: '商品代码'
-  })
-  symbol: string;
 
   @Column({
     type: DataType.STRING(10),
@@ -39,34 +32,34 @@ export default class Position extends Model<Position> {
   type: string;
 
   @Column({
-    type: DataType.CHAR(10),
-    comment: '方向'
+    type: DataType.INTEGER(10),
+    comment: '小数点精度'
   })
-  side: string;
+  amount_precision: number;
 
   @Column({
     type: DataType.STRING(20),
-    comment: '股数'
+    comment: '保有量'
   })
-  quantity: string;
+  onhand_amount: string;
 
   @Column({
     type: DataType.STRING(20),
-    comment: '价格'
+    comment: '锁定量'
   })
-  price: string;
+  locked_amount: string;
+
+  @Column({
+    type: DataType.STRING(20),
+    comment: '可使用量'
+  })
+  free_amount: string;
 
   @Column({
     type: DataType.CHAR(1),
     comment: '回测模式'
   })
   backtest: string;
-
-  @Column({
-    type: DataType.STRING(20),
-    comment: '模拟时间'
-  })
-  mocktime: string;
 
   @Column
   get created_at(): string {
